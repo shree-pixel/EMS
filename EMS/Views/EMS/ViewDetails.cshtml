@@ -1,0 +1,131 @@
+﻿@model EMS.Models.DetailsModel
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "ViewDetails";
+}
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6 text-end">
+            <a asp-controller="EMS" asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Edit</a>
+        </div>
+
+
+    </div>
+    <br><br>
+    <table class="table table-bordered table-striped" style="width:100%">
+        <tbody>
+            <tr>
+                <td width="20%">
+                    Name
+                </td>
+                <td width="20%">
+                    @Model.Name
+                </td>
+            </tr>
+            <tr>
+                <td width="20%">
+                    DOB
+                </td>
+                <td width="20%">
+                    @Model.DOB
+                </td>
+            </tr>
+            <tr>
+                <td width="20%">
+                    Gender
+                </td>
+                <td width="20%">
+                    @Model.Gender
+                </td>
+            </tr>
+            <tr>
+                <td width="20%">
+                    Email
+                </td>
+                <td width="20%">
+                    @Model.Email
+                </td>
+            </tr>
+            <tr>
+                <td width="20%">
+                    Address
+                </td>
+                <td width="20%">
+                    @Model.Address
+                </td>
+            </tr>
+            <tr>
+                <td width="20%">
+                    State
+                </td>
+                <td width="20%">
+                    @Model.State
+                </td>
+            <tr>
+                <td DetailsModel="20%">
+                    Employee Number
+                </td>
+                <td width="20%">
+                        @Model.Empno
+                </td>
+            </tr>
+            <tr>
+                <td DetailsModel="20%">
+                    Designation
+                </td>
+                <td width="20%">
+                        @Model.Designation
+                </td>
+            </tr>
+            <tr>
+                <td DetailsModel="20%">
+                    Status
+                </td>
+                @if (Model.Status)
+                {
+                    <td width="20%">Active</td>
+                }
+                else
+                {
+                    <td width="20%">Inactive</td>
+                }
+                </tr>
+            <tr>
+                <td DetailsModel="20%">
+                    Phone Number
+                </td>
+                <td width="20%">
+                        @Model.PhoneNumber
+                </td>
+            </tr>
+            <tr>
+                <td DetailsModel="20%">
+                    DOJ
+                </td>
+                <td width="20%">
+                        @Model.DOJ
+                </td>
+            </tr>
+            <tr>
+                <td DetailsModel="20%">
+                    Created Date
+                </td>
+                <td width="20%">
+                        @Model.CreatedDate
+                </td>
+            </tr>
+            <tr>
+                <td DetailsModel="20%">
+                    Updated Date
+                </td>
+                <td width="20%">
+                        @Model.UpdatedDate
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>

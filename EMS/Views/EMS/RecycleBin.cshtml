@@ -1,0 +1,58 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model IEnumerable<DetailsModel>
+@{
+    ViewData["Title"] = "Bin";
+}
+
+<div class="container p-3">
+    <div class="row pt-4">
+        <table class="table table-bordered table-striped" style="width:100%">
+            <thead>
+                <tr>
+                    <th>S.No</th>
+                    <th>Employee Number</th>
+                    <th>Name</th>
+                    <th>Designation</th>
+                    <th>Updated Date</th>
+                    <th>Email</th>
+                    <th>Phone Number</th>
+                    <th>Status</th>
+                    <th>Undo</th>
+                    <th>Permanent Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var obj in Model)
+                {
+                    <tr>
+                        <td width="20%">@obj.Sno</td>
+                        <td width="20%">@obj.Empno</td>
+                        <td width="20%">@obj.Name</td>
+                        <td width="20%">@obj.Designation</td>
+                        <td width="20%">@obj.UpdatedDate</td>
+                        <td width="20%">@obj.Email</td>
+                        <td width="20%">@obj.PhoneNumber</td>
+                        <td width="20%">@(obj.Status ? "Active" : "Inactive")</td>
+                        <td>
+                            <a asp-controller="EMS" asp-action="Undo" asp-route-id="@obj.Id">
+                                <button class="btn btn-warning">Undo</button>
+                            </a>
+                        </td>
+                        <td>
+                            <a asp-controller="EMS" asp-action="PermanentDelete" asp-route-id="@obj.Id">
+                                <button class="btn btn-danger">Remove</button>
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <br /><br />
+    </div>
+</div>
+
+<div>
+    <a asp-action="Homepage"><button class="btn btn-primary">Back to List</button></a>
+</div>
